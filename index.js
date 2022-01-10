@@ -48,7 +48,7 @@ function generalPrompts() {
             name:'position',
             type:'list',
             message:'Employee position',
-            choices:['Manager', 'Engineer', 'Intern']
+            choices:['Manager', 'Engineer', 'Intern',]
         },
         {
             name:'id',
@@ -65,7 +65,9 @@ function generalPrompts() {
         if (response.position === 'Manager'){
         managerP(response)
         } else if (response.position === 'Engineer') {
-            engineerP(response)
+        engineerP(response)
+        } else if (response.position === 'Intern') {
+        internP(response)
         }
     })
 }
@@ -120,4 +122,28 @@ const engineerP = (baseEmp) => {
     })
 }
 
+const internP = (baseEmp) => {
+    inquirer.prompt([
+        {
+            name:'School',
+            type:'input',
+            message:'What school did you attend'
+        },
+        {
+            name:'additional',
+            type:'list',
+            message:'create an additional employee',
+            choices:['yes', 'no']
+        }
+    ])
+    .then(({School, additional}) => {
+        const newIntern = new Intern (baseEmp.name, baseEmp.id, baseEmp.email, School)
+        allEmployees.push(newIntern)
+        if (additional === 'yes'){
+            generalPrompts() 
+        } else {
+            console.log(allEmployees)
+        }
+    })
+}
 generalPrompts();
