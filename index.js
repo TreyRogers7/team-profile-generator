@@ -21,8 +21,8 @@ const generateHtml = (employee) =>
         </div>
   </div>
   <div class="card" style="width: 15rem;">
-        <h1 class="card-title">Trey</h1>
-        <h2 class="card-text">Engineer</h2>
+        <h1 class="card-title">${employee.name}</h1>
+        <h2 class="card-text">${employee.position}</h2>
       <div class="card-body">
           <ul class="list-group list-group-flush">
                 <li class="list-group-item">${employee.id}</li>
