@@ -31,6 +31,20 @@ const generateHtml = (employee) =>
                 <li class="list-group-item">Office Number:${employee[0].officeNumber}</li>
                 <li class="list-group-item">School:${employee[0].school}</li>
           </ul>
+          <ul class="list-group list-group-flush">
+                <li class="list-group-item">${employee[0].id}</li>
+                <li class="list-group-item">Email:${employee[0].email}</li>
+                <li class="list-group-item">GitHub:${employee[0].github}</li>
+                <li class="list-group-item">Office Number:${employee[0].officeNumber}</li>
+                <li class="list-group-item">School:${employee[0].school}</li>
+          </ul>
+          <ul class="list-group list-group-flush">
+                <li class="list-group-item">${employee[0].id}</li>
+                <li class="list-group-item">Email:${employee[0].email}</li>
+                <li class="list-group-item">GitHub:${employee[0].github}</li>
+                <li class="list-group-item">Office Number:${employee[0].officeNumber}</li>
+                <li class="list-group-item">School:${employee[0].school}</li>
+          </ul>
       </div>
 </div>
 </body>
@@ -48,7 +62,7 @@ function generalPrompts() {
             name:'position',
             type:'list',
             message:'Employee position',
-            choices:['Manager', 'Engineer', 'Intern',]
+            choices:['Manager', 'Engineer', 'Intern', 'Employee']
         },
         {
             name:'id',
@@ -62,7 +76,9 @@ function generalPrompts() {
         },
     ])
     .then((response) => {
-        if (response.position === 'Manager'){
+        if (response.position === 'Employee') {
+        generalPrompts(response)
+        } else if (response.position === 'Manager') {
         managerP(response)
         } else if (response.position === 'Engineer') {
         engineerP(response)
