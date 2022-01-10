@@ -21,7 +21,7 @@ const generateHtml = (employee) =>
         </div>
   </div>
   <div class="card" style="width: 15rem;">
-        <h1 class="card-title">Emily</h1>
+        <h1 class="card-title">Trey</h1>
         <h2 class="card-text">Engineer</h2>
       <div class="card-body">
           <ul class="list-group list-group-flush">
@@ -146,4 +146,9 @@ const internP = (baseEmp) => {
         }
     })
 }
+
+const htmlContent = generateHtml(allEmployees);
+
+fs.writeFile('index.html', htmlContent, (err) =>
+err ? console.log(err) : console.log('index.html successfully generated!'));
 generalPrompts();
