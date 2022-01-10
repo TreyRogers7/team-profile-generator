@@ -21,15 +21,15 @@ const generateHtml = (employee) =>
         </div>
   </div>
   <div class="card" style="width: 15rem;">
-        <h1 class="card-title">${employee.name}</h1>
-        <h2 class="card-text">${employee.position}</h2>
+        <h1 class="card-title">${employee[0].name}</h1>
+        <h2 class="card-text">${employee[0].position}</h2>
       <div class="card-body">
           <ul class="list-group list-group-flush">
-                <li class="list-group-item">${employee.id}</li>
-                <li class="list-group-item">Email:${employee.email}</li>
-                <li class="list-group-item">GitHub:${employee.github}</li>
-                <li class="list-group-item">Office Number:${employee.officeNumber}</li>
-                <li class="list-group-item">School:${employee.school}</li>
+                <li class="list-group-item">${employee[0].id}</li>
+                <li class="list-group-item">Email:${employee[0].email}</li>
+                <li class="list-group-item">GitHub:${employee[0].github}</li>
+                <li class="list-group-item">Office Number:${employee[0].officeNumber}</li>
+                <li class="list-group-item">School:${employee[0].school}</li>
           </ul>
       </div>
 </div>
@@ -92,7 +92,7 @@ const managerP = (baseEmp) => {
         if (additional === 'yes'){
             generalPrompts() 
         } else {
-            console.log(allEmployees)
+            init(allEmployees)
         }
     })
 }
@@ -117,7 +117,7 @@ const engineerP = (baseEmp) => {
         if (additional === 'yes'){
             generalPrompts() 
         } else {
-            console.log(allEmployees)
+            init(allEmployees)
         }
     })
 }
@@ -142,13 +142,16 @@ const internP = (baseEmp) => {
         if (additional === 'yes'){
             generalPrompts() 
         } else {
-            console.log(allEmployees)
+            init(allEmployees)
         }
     })
 }
 
-const htmlContent = generateHtml(allEmployees);
+// const htmlContent = generateHtml(allEmployees);
 
-fs.writeFile('index.html', htmlContent, (err) =>
-err ? console.log(err) : console.log('index.html successfully generated!'));
+init = function(data) {
+    
+    fs.writeFile('./dist/index.html', generateHtml(data), (err) =>
+    err ? console.log(err) : console.log('index.html successfully generated!'));
+}
 generalPrompts();
