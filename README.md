@@ -34,7 +34,9 @@ Intern.test.js
 
 ### LINKS
 
+Repository: https://github.com/TreyRogers7/team-profile-generator
 
+Video Demo: 
     
 ### INFO
 GitHub: https://www.github.com/TreyRogers7
