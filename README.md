@@ -10,6 +10,7 @@ Using node server.js, you will be able to generate an html file describing each 
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Tests](#tests)
+- [Links](#links)
 - [Info](#info)
     
 ### INSTALLATION
