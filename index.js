@@ -20,7 +20,7 @@ const generateHtml = (employee) =>
             <h1 class='text-center'>My Team</h1>
         </div>
   </div>
-  <div class="card-group>
+  <div class="card-group">
   <div class="card" style="width: 18rem;">
         <h3 class="card-title text-center">${employee[0].getRole()}</h3>
         <h5 class="card-text text-center">${employee[0].name}</h5>
