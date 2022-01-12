@@ -2,7 +2,7 @@
 
 ### DESCRIPTION
 
-Using node server.js, you will be able to generate an html file describing each of the employees you have hired onto your team.
+enter the team profile generator file. once entered, run the command "node index.js" this will prompt you with a question list to followfor each employee. they will ask for you name, id number, and your email address. also a few extra questions will be asked pertaining to the position you select in a list. managers will be asked to provide an office number, engineers will be asked to provide their github username, and intern will be asked to provide the school they studied at.
 
 ## Table of contents
 - [Description](#description)
@@ -19,7 +19,7 @@ nodes, fs, inquirer
     
 ### USAGE
 
-enter the team profile generator file. once entered, run the command "node index.js" this will prompt you with a question list to followfor each employee. they will ask for you name, id number, and your email address. also a few extra questions will be asked pertaining to the position you select in a list. managers will be asked to provide an office number, engineers will be asked to provide their github username, and intern will be asked to provide the school they studied at.
+Using node server.js, you will be able to generate an html file describing each of the employees you have hired onto your team.
     
 ### CONTRIBUTING
 
